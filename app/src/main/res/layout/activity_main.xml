@@ -8,7 +8,7 @@
     tools:context="com.jhorje18.freebitcoincaptcha.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtTiempo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="59:59"
@@ -17,7 +17,7 @@
         android:textStyle="bold" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progresoTiempo"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,11 +38,13 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnIniciar"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClick"
+            android:clickable="true"
             android:backgroundTint="@android:color/holo_green_light"
             android:text="Iniciar" />
 
@@ -52,14 +54,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClick"
+            android:clickable="true"
             android:text="Web" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnCancelar"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClick"
+            android:clickable="true"
             android:backgroundTint="@android:color/holo_red_dark"
             android:text="Cancelar" />
     </LinearLayout>
