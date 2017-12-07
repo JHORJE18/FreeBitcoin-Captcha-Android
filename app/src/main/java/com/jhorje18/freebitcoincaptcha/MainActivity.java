@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CountDownTimer countDownTimer;
     int tiempo = 60;
+    int actual = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     //Bara progreso
     private void progresoBarra(int restante){
         int estado = (restante * 100) / tiempo;
+        actual = restante;
 
         barraProgreso.setProgress(100 - estado);
         Log.d("#TIME" , "Tiempo establecido a " + estado);
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                txtTiempo.setText("Finalizado!");
+                txtTiempo.setText("Fin!");
             }
         };
 
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Detener cuenta
     private void cancelar() {
-        if (countDownTimer != null){
+        if (countDownTimer != null) {
             countDownTimer.cancel();
             countDownTimer = null;
             txtTiempo.setText("00:00");
